@@ -20,8 +20,8 @@ entity OrderBook {
     * order_indicator : enum
     * order_type : enum
     * order_status : enum
-    * price : numeric
-    * quantity : numeric
+    * price : decimal
+    * quantity : decimal
     --
     * created_at
     * updated_at
@@ -34,8 +34,8 @@ entity TradeHistory {
     * pair_symbol : string
     * buyer_id : integer
     * seller_id : integer
-    * price : numeric
-    * quantity : numeric
+    * price : decimal
+    * quantity : decimal
     --
     * created_at
     * updated_at

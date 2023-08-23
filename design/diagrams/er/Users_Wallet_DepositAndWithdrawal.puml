@@ -9,13 +9,13 @@ entity CryptoCurrency {
     * name : string
     * symbol : string
     * rank : integer
-    * price_usd : numeric
-    * price_btc : numeric
-    * volume_usd_24h : numeric
-    * market_cap_usd : numeric
-    * available_supply : numeric
-    * total_supply : numeric
-    * max_supply : numeric
+    * price_usd : decimal
+    * price_btc : decimal
+    * volume_usd_24h : decimal
+    * market_cap_usd : decimal
+    * available_supply : decimal
+    * total_supply : decimal
+    * max_supply : decimal
     --
     * created_at
     * updated_at
@@ -26,7 +26,7 @@ entity Wallet {
     --
     * user_id : integer
     * currency_symbol : string
-    * balance : numeric
+    * balance : decimal
     * created_at
     * updated_at
 }
@@ -36,7 +36,7 @@ entity DepositAndWithdrawal {
     --
     * user_id : integer
     * currency_symbol : string
-    * amount : numeric
+    * amount : decimal
     * address : string
     * status : enum
     --

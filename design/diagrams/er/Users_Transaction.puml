@@ -5,7 +5,7 @@ entity Transaction {
     --
     * user_id : integer
     * currency_symbol : string
-    * amount : numeric
+    * amount : decimal
     * type : enum
     * status : enum
     --
@@ -18,7 +18,7 @@ entity PendingTransaction {
     --
     * user_id : integer
     * currency_symbol : string
-    * amount : numeric
+    * amount : decimal
     * type : enum
     * status : enum
     --

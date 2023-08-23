@@ -1,0 +1,35 @@
+@startuml
+
+entity FiatCurrency {
+    * id
+    --
+    * name : string
+    * symbol : string
+    --
+    * created_at
+    * updated_at
+}
+
+entity TradeFiatWithCrypto {
+    * id
+    --
+    * user_id : integer
+    * fiat_currency_symbol : integer
+    * crypto_currency_symbol : integer
+    * trade_type : enum
+    * trade_status : enum
+    * payment_method : enum
+    * payment_information : string
+    * fiat_amount : decimal
+    * crypto_amount : decimal
+    * exchange_rate : decimal
+    * buyer_wallet_address : string
+    --
+    * created_at
+    * updated_at
+}
+
+User ||--o{ TradeFiatWithCrypto
+TradeFiatWithCrypto }o--o| FiatCurrency
+
+@enduml

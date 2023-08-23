@@ -1,6 +1,6 @@
 # Hello, This is Backend test for the Skuberg company.
 
-### ข้อสอบ Backend
+### 📌 ข้อสอบ Backend
 
 **โจทย์ข้อ 1** ให้ออกแบบระบบฐานข้อมูล(ทำเป็นรูปแบบ ER) ที่เป็นตัวกลางของการแลกเปลี่ยน Cryptocurrencies เช่น Bitcoin โดย สามารถนำเงิน Fiat (THB,USD) มาซื้อเหรียญ จาก User คนอื่นๆในระบบได้ และสามารถจะโอนเหรียญหากันภายในระบบ หรือ โอนหาคนอื่นภายนอกระบบได้
 ยกตัวอย่าง https://c2c.binance.com/th/trade/buy/BTC
@@ -16,7 +16,7 @@
 
 ---
 
-### ER Diagram
+### 🌈 ER Diagram
 1. User with Role and Permission
     - Source: [Users_Role_Permission.puml](./design/diagrams/er/Users_Role_Permission.puml)
     - Png: [Users_Role_Permission.png](./design/diagrams/png/Users_Role_Permission.png)
@@ -33,13 +33,17 @@
     - Source: [Users_Transaction.puml](./design/diagrams/er/Users_Transaction.puml)
     - Png: [Users_Transaction.png](./design/diagrams/png/Users_Transaction.png)
 
-5. All Entity
+5. User with TradeFiatWithCrypto (Buy/Sell)
+    - Source: [Users_TradeFiatWithCrypto.puml](./design/diagrams/er/Users_TradeFiatWithCrypto.puml)
+    - Png: [Users_TradeFiatWithCrypto.png](./design/diagrams/png/Users_TradeFiatWithCrypto.png)
+
+6. All Entity
     - Source: [All.puml](./design/diagrams/er/All.puml)
     - Png: [All.png](./design/diagrams/png/All.png)
 
 ---
 
-### How to run
+### 📝 How to run
 **requirement**
 - linux
 - docker
@@ -73,3 +77,6 @@
     ```
 
 ---
+
+### 🖥️ Contributors
+- [Teerapong Ladlee](https://github.com/xemoe)

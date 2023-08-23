@@ -7,6 +7,6 @@ skinparam linetype ortho
 !include Users_Wallet_DepositAndWithdrawal.puml
 !include Users_OrderBook.puml
 !include Users_Transaction.puml
-!include Users_TradeFiatWithCrypto.puml
+!include Users_TradeFiat.puml
 
 @enduml

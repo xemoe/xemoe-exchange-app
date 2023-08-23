@@ -33,9 +33,9 @@
     - Source: [Users_Transaction.puml](./design/diagrams/er/Users_Transaction.puml)
     - Png: [Users_Transaction.png](./design/diagrams/png/Users_Transaction.png)
 
-5. User with TradeFiatWithCrypto (Buy/Sell)
-    - Source: [Users_TradeFiatWithCrypto.puml](./design/diagrams/er/Users_TradeFiatWithCrypto.puml)
-    - Png: [Users_TradeFiatWithCrypto.png](./design/diagrams/png/Users_TradeFiatWithCrypto.png)
+5. User with TradeFiat (Buy/Sell)
+    - Source: [Users_TradeFiat.puml](./design/diagrams/er/Users_TradeFiat.puml)
+    - Png: [Users_TradeFiat.png](./design/diagrams/png/Users_TradeFiat.png)
 
 6. All Entity
     - Source: [All.puml](./design/diagrams/er/All.puml)

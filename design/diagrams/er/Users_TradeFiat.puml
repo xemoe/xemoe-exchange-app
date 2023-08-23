@@ -10,7 +10,7 @@ entity FiatCurrency {
     * updated_at
 }
 
-entity TradeFiatWithCrypto {
+entity TradeFiat {
     * id
     --
     * user_id : integer
@@ -29,7 +29,7 @@ entity TradeFiatWithCrypto {
     * updated_at
 }
 
-User ||--o{ TradeFiatWithCrypto
-TradeFiatWithCrypto }o--o| FiatCurrency
+User ||--o{ TradeFiat
+TradeFiat }o--o| FiatCurrency
 
 @enduml

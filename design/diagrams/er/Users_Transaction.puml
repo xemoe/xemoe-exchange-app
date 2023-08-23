@@ -1,0 +1,36 @@
+@startuml
+
+entity Transaction {
+    * id : integer
+    --
+    * user_id : integer
+    * currency_symbol : string
+    * amount : numeric
+    * type : enum
+    * status : enum
+    --
+    * created_at
+    * updated_at
+}
+
+entity PendingTransaction {
+    * id : integer
+    --
+    * user_id : integer
+    * currency_symbol : string
+    * amount : numeric
+    * type : enum
+    * status : enum
+    --
+    * created_at
+    * updated_at
+}
+
+' Relationships
+
+User ||--o{ Transaction
+User ||--o{ PendingTransaction
+Transaction }o--|| CryptoCurrency : has each one
+PendingTransaction }o--|| CryptoCurrency : has each one
+
+@enduml

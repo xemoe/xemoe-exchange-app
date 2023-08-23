@@ -1,0 +1,57 @@
+@startuml
+
+' avoid problems with angled crows feet
+skinparam linetype ortho
+
+entity CryptoCurrency {
+    * id
+    --
+    * name : string
+    * symbol : string
+    * rank : integer
+    * price_usd : numeric
+    * price_btc : numeric
+    * volume_usd_24h : numeric
+    * market_cap_usd : numeric
+    * available_supply : numeric
+    * total_supply : numeric
+    * max_supply : numeric
+    --
+    * created_at
+    * updated_at
+}
+
+entity Wallet {
+    * id
+    --
+    * user_id : integer
+    * currency_symbol : string
+    * balance : numeric
+    * created_at
+    * updated_at
+}
+
+entity DepositAndWithdrawal {
+    * id
+    --
+    * user_id : integer
+    * currency_symbol : string
+    * amount : numeric
+    * address : string
+    * status : enum
+    --
+    * created_at
+    * updated_at
+}
+
+' Relationships
+
+User ||--o{ Wallet : has many
+User ||--o{ DepositAndWithdrawal : has many
+
+Wallet ||--o{ DepositAndWithdrawal : has many
+Wallet }o--|| CryptoCurrency : has each one
+
+DepositAndWithdrawal }o--|| CryptoCurrency : has each one
+
+@enduml

@@ -16,6 +16,29 @@
 
 ---
 
+### ER Diagram
+1. User with Role and Permission
+    - Source: [Users_Role_Permission.puml](./design/diagrams/er/Users_Role_Permission.puml)
+    - Png: [Users_Role_Permission.png](./design/diagrams/png/Users_Role_Permission.png)
+
+2. User with Wallet
+    - Source: [Users_Wallet_DepositAndWithdrawal.puml](./design/diagrams/er/Users_Wallet_DepositAndWithdrawal.puml)
+    - Png: [Users_Wallet_DepositAndWithdrawal.png](./design/diagrams/png/Users_Wallet_DepositAndWithdrawal.png)
+
+3. User with OrderBook
+    - Source: [Users_OrderBook.puml](./design/diagrams/er/Users_OrderBook.puml)
+    - Png: [Users_OrderBook.png](./design/diagrams/png/Users_OrderBook.png)
+
+4. User with Transaction
+    - Source: [Users_Transaction.puml](./design/diagrams/er/Users_Transaction.puml)
+    - Png: [Users_Transaction.png](./design/diagrams/png/Users_Transaction.png)
+
+5. All Entity
+    - Source: [All.puml](./design/diagrams/er/All.puml)
+    - Png: [All.png](./design/diagrams/png/All.png)
+
+---
+
 ### How to run
 **requirement**
 - linux

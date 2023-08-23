@@ -1,0 +1,60 @@
+@startuml
+
+entity User {
+    * id
+    --
+    * name : string
+    * email : string
+    * password : string
+    * remember_token : string
+    --
+    * created_at
+    * updated_at
+}
+
+entity Role {
+    * id
+    --
+    * name : string
+    --
+    * created_at
+    * updated_at
+}
+
+entity RoleUser {
+    * id
+    --
+    * user_id : integer
+    * role_id : integer
+    --
+    * created_at
+    * updated_at
+}
+
+entity Permission {
+    * id
+    --
+    * name : string
+    --
+    * created_at
+    * updated_at
+}
+
+entity RolePermission {
+    * id
+    --
+    * role_id : integer
+    * permission_id : integer
+    --
+    * created_at
+    * updated_at
+}
+
+' Relationships
+
+User ||--o{ RoleUser : has many
+Role ||--o{ RoleUser
+Role ||--o{ RolePermission
+Permission ||--o{ RolePermission
+
+@enduml

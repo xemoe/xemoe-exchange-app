@@ -1,0 +1,11 @@
+@startuml
+
+' avoid problems with angled crows feet
+skinparam linetype ortho
+
+!include Users_Role_Permission.puml
+!include Users_Wallet_DepositAndWithdrawal.puml
+!include Users_OrderBook.puml
+!include Users_Transaction.puml
+
+@enduml

@@ -1,5 +1,10 @@
 @startuml
 
+' avoid problems with angled crows feet
+skinparam linetype ortho
+
+!include Users_Transaction.puml
+
 entity TradingPair {
     * id
     --
@@ -27,7 +32,7 @@ entity OrderBook {
     * updated_at
 }
 
-entity TradeHistory {
+entity Trades {
     * id
     --
     * user_id : integer
@@ -41,12 +46,33 @@ entity TradeHistory {
     * updated_at
 }
 
+entity TradeHistory {
+    * id
+    --
+    * user_id : integer
+    * pair_symbol : string
+    * price : decimal
+    * quantity : decimal
+    * trade_type : enum
+    * trade_status : enum
+    * trade_event : enum
+    --
+    * created_at
+    * updated_at
+}
+
 ' Relationships
 
 User --o{ OrderBook : owner
-User --o{ TradeHistory : buyer or seller
+User --o{ Trades : buyer or seller
+User --o{ TradeHistory : owner
+User --o{ Transaction : owner
+User --o{ PendingTransaction : owner
 
 OrderBook }o-- TradingPair : trading pair
-TradeHistory }o-- TradingPair : trading pair
+Trades }o-- TradingPair : trading pair
+
+Trades ||--o{ Transaction : buyer or seller
+Trades ||--o{ PendingTransaction : buyer or seller
 
 @enduml

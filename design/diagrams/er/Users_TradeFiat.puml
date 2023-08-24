@@ -14,6 +14,8 @@ entity TradeFiat {
     * id
     --
     * user_id : integer
+    * buyer_id : integer
+    * seller_id : integer
     * fiat_currency_symbol : integer
     * crypto_currency_symbol : integer
     * trade_type : enum
@@ -29,7 +31,44 @@ entity TradeFiat {
     * updated_at
 }
 
+entity FiatTransaction {
+    * id : integer
+    --
+    * user_id : integer
+    * trade_fiat_id : integer
+    * currency_symbol : string
+    * amount : decimal
+    * type : enum
+    * status : enum
+    --
+    * created_at
+    * updated_at
+}
+
+entity PendingFiatTransaction {
+    * id : integer
+    --
+    * user_id : integer
+    * trade_fiat_id : integer
+    * currency_symbol : string
+    * amount : decimal
+    * type : enum
+    * status : enum
+    --
+    * created_at
+    * updated_at
+}
+
 User ||--o{ TradeFiat
+User ||--o{ FiatTransaction
+User ||--o{ PendingFiatTransaction
+
 TradeFiat }o--o| FiatCurrency
+
+' TradeFiat has many FiatTransaction, but FiatTransaction has only one TradeFiat
+TradeFiat ||--{ FiatTransaction
+
+' TradeFiat has many PendingFiatTransaction, but PendingFiatTransaction has only one TradeFiat
+TradeFiat ||--{ PendingFiatTransaction
 
 @enduml

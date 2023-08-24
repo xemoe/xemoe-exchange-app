@@ -16,6 +16,7 @@ entity CryptoCurrency {
     * available_supply : decimal
     * total_supply : decimal
     * max_supply : decimal
+    * blockchain_network_address : string
     --
     * created_at
     * updated_at
@@ -26,12 +27,26 @@ entity Wallet {
     --
     * user_id : integer
     * currency_symbol : string
+    * address : string
     * balance : decimal
     * created_at
     * updated_at
 }
 
-entity DepositAndWithdrawal {
+entity CryptoDeposit {
+    * id
+    --
+    * user_id : integer
+    * currency_symbol : string
+    * amount : decimal
+    * address : string
+    * status : enum
+    --
+    * created_at
+    * updated_at
+}
+
+entity CryptoWithdrawal {
     * id
     --
     * user_id : integer
@@ -47,11 +62,14 @@ entity DepositAndWithdrawal {
 ' Relationships
 
 User ||--o{ Wallet : has many
-User ||--o{ DepositAndWithdrawal : has many
+User ||--o{ CryptoDeposit : has many
+User ||--o{ CryptoWithdrawal : has many
 
-Wallet ||--o{ DepositAndWithdrawal : has many
+Wallet ||--o{ CryptoDeposit : has many
+Wallet ||--o{ CryptoWithdrawal : has many
 Wallet }o--|| CryptoCurrency : has each one
 
-DepositAndWithdrawal }o--|| CryptoCurrency : has each one
+CryptoDeposit }o--|| CryptoCurrency : has each one
+CryptoWithdrawal }o--|| CryptoCurrency : has each one
 
 @enduml

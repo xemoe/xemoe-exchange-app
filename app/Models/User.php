@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Enums\RoleNameEnum;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 /**
  * @method static create(array $array)
+ * @method static count()
  * @property string $name
  */
 class User extends Authenticatable
@@ -47,4 +49,26 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function roleUser(): HasMany
+    {
+        return $this->hasMany(RoleUser::class);
+    }
+
+    private function hasRole(RoleNameEnum $roleName): bool
+    {
+        return $this->roleUser()->whereHas('role', static function ($query) use ($roleName) {
+            $query->where('name', $roleName);
+        })->exists();
+    }
+
+    public function hasRegularRole(): bool
+    {
+        return $this->hasRole(RoleNameEnum::Regular);
+    }
+
+    public function hasAdminRole(): bool
+    {
+        return $this->hasRole(RoleNameEnum::Admin);
+    }
 }

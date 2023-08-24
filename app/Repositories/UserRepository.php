@@ -17,7 +17,7 @@ class UserRepository
         string $name,
         string $email,
         string $password
-    ): mixed
+    ): User
     {
         return User::create([
             'name' => $name,

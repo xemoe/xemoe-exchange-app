@@ -23,7 +23,7 @@ class CurrencyRepositoryTest extends TestCase
         //
         $input = [
             'name' => fake()->word(),
-            'symbol' => fake()->currencyCode(),
+            'symbol' => fake()->unique()->currencyCode(),
         ];
 
         //
@@ -54,7 +54,7 @@ class CurrencyRepositoryTest extends TestCase
         //
         $input = [
             'name' => fake()->word(),
-            'symbol' => fake()->currencyCode(),
+            'symbol' => fake()->unique()->currencyCode(),
         ];
 
         $this->currencyRepository()->create(fake()->word(), $input['symbol']);

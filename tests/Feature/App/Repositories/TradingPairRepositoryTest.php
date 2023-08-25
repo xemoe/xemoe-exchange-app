@@ -23,8 +23,8 @@ class TradingPairRepositoryTest extends TestCase
         //
         // Arrange
         //
-        $firstCurrency = $this->currencyRepository()->create(fake()->word(), fake()->currencyCode());
-        $secondCurrency = $this->currencyRepository()->create(fake()->word(), fake()->currencyCode());
+        $firstCurrency = $this->currencyRepository()->create(fake()->word(), fake()->unique()->currencyCode());
+        $secondCurrency = $this->currencyRepository()->create(fake()->word(), fake()->unique()->currencyCode());
 
         //
         // Act
@@ -82,8 +82,8 @@ class TradingPairRepositoryTest extends TestCase
         //
         // Arrange
         //
-        $firstCurrency = $this->currencyRepository()->create(fake()->word(), fake()->currencyCode());
-        $fiatCurrency = $this->fiatCurrencyRepository()->create(fake()->word(), fake()->currencyCode());
+        $firstCurrency = $this->currencyRepository()->create(fake()->word(), fake()->unique()->currencyCode());
+        $fiatCurrency = $this->fiatCurrencyRepository()->create(fake()->word(), fake()->unique()->currencyCode());
 
         //
         // Exception
@@ -104,8 +104,8 @@ class TradingPairRepositoryTest extends TestCase
         //
         // Arrange
         //
-        $cryptoCurrency = $this->currencyRepository()->create(fake()->word(), fake()->currencyCode());
-        $fiatCurrency = $this->fiatCurrencyRepository()->create(fake()->word(), fake()->currencyCode());
+        $cryptoCurrency = $this->currencyRepository()->create(fake()->word(), fake()->unique()->currencyCode());
+        $fiatCurrency = $this->fiatCurrencyRepository()->create(fake()->word(), fake()->unique()->currencyCode());
 
         //
         // Act
@@ -138,8 +138,8 @@ class TradingPairRepositoryTest extends TestCase
         //
         // Arrange
         //
-        $cryptoCurrency = $this->currencyRepository()->create(fake()->word(), fake()->currencyCode());
-        $fiatCurrency = $this->fiatCurrencyRepository()->create(fake()->word(), fake()->currencyCode());
+        $cryptoCurrency = $this->currencyRepository()->create(fake()->word(), fake()->unique()->currencyCode());
+        $fiatCurrency = $this->fiatCurrencyRepository()->create(fake()->word(), fake()->unique()->currencyCode());
 
         // Create the first trading pair
         $this->tradingPairRepository()->createCryptoToFiat($cryptoCurrency, $fiatCurrency);
@@ -163,8 +163,8 @@ class TradingPairRepositoryTest extends TestCase
         //
         // Arrange
         //
-        $cryptoCurrency = $this->currencyRepository()->create(fake()->word(), fake()->currencyCode());
-        $fiatCurrency = $this->fiatCurrencyRepository()->create(fake()->word(), fake()->currencyCode());
+        $cryptoCurrency = $this->currencyRepository()->create(fake()->word(), fake()->unique()->currencyCode());
+        $fiatCurrency = $this->fiatCurrencyRepository()->create(fake()->word(), fake()->unique()->currencyCode());
 
         //
         // Exception
@@ -185,8 +185,8 @@ class TradingPairRepositoryTest extends TestCase
         //
         // Arrange
         //
-        $cryptoCurrency = $this->currencyRepository()->create(fake()->word(), fake()->currencyCode());
-        $fiatCurrency = $this->fiatCurrencyRepository()->create(fake()->word(), fake()->currencyCode());
+        $cryptoCurrency = $this->currencyRepository()->create(fake()->word(), fake()->unique()->currencyCode());
+        $fiatCurrency = $this->fiatCurrencyRepository()->create(fake()->word(), fake()->unique()->currencyCode());
 
         //
         // Act
@@ -219,8 +219,8 @@ class TradingPairRepositoryTest extends TestCase
         //
         // Arrange
         //
-        $cryptoCurrency = $this->currencyRepository()->create(fake()->word(), fake()->currencyCode());
-        $fiatCurrency = $this->fiatCurrencyRepository()->create(fake()->word(), fake()->currencyCode());
+        $cryptoCurrency = $this->currencyRepository()->create(fake()->word(), fake()->unique()->currencyCode());
+        $fiatCurrency = $this->fiatCurrencyRepository()->create(fake()->word(), fake()->unique()->currencyCode());
 
         // Create the first trading pair
         $this->tradingPairRepository()->createFiatToCrypto($fiatCurrency, $cryptoCurrency);
@@ -244,8 +244,8 @@ class TradingPairRepositoryTest extends TestCase
         //
         // Arrange
         //
-        $cryptoCurrency = $this->currencyRepository()->create(fake()->word(), fake()->currencyCode());
-        $fiatCurrency = $this->fiatCurrencyRepository()->create(fake()->word(), fake()->currencyCode());
+        $cryptoCurrency = $this->currencyRepository()->create(fake()->word(), fake()->unique()->currencyCode());
+        $fiatCurrency = $this->fiatCurrencyRepository()->create(fake()->word(), fake()->unique()->currencyCode());
 
         //
         // Exception
@@ -272,9 +272,9 @@ class TradingPairRepositoryTest extends TestCase
         //
         // Arrange
         //
-        $cryptoCurrency = $this->currencyRepository()->create(fake()->word(), fake()->currencyCode());
-        $secondCryptoCurrency = $this->currencyRepository()->create(fake()->word(), fake()->currencyCode());
-        $fiatCurrency = $this->fiatCurrencyRepository()->create(fake()->word(), fake()->currencyCode());
+        $cryptoCurrency = $this->currencyRepository()->create(fake()->word(), fake()->unique()->currencyCode());
+        $secondCryptoCurrency = $this->currencyRepository()->create(fake()->word(), fake()->unique()->currencyCode());
+        $fiatCurrency = $this->fiatCurrencyRepository()->create(fake()->word(), fake()->unique()->currencyCode());
 
         $this->tradingPairRepository()->createCryptoToCrypto($cryptoCurrency, $secondCryptoCurrency);
         $this->tradingPairRepository()->createCryptoToFiat($cryptoCurrency, $fiatCurrency);

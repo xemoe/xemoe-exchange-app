@@ -22,7 +22,7 @@ class WalletServiceTest extends TestCase
         // Arrange
         //
         $newUser = $this->registerNewUser();
-        $newCurrency = $this->currencyRepository()::create(fake()->word(), fake()->currencyCode());
+        $newCurrency = $this->currencyRepository()::create(fake()->word(), fake()->unique()->currencyCode());
 
         $input = [
             'user_id' => $newUser->id,
@@ -60,7 +60,7 @@ class WalletServiceTest extends TestCase
         // Input with symbol that does not exist in the database
         $invalidInput = [
             'user_id' => $newUser->id,
-            'symbol' => fake()->currencyCode(),
+            'symbol' => fake()->unique()->currencyCode(),
         ];
 
         //
@@ -88,7 +88,7 @@ class WalletServiceTest extends TestCase
         // Arrange
         //
         $newUser = $this->registerNewUser();
-        $newCurrency = $this->currencyRepository()::create(fake()->word(), fake()->currencyCode());
+        $newCurrency = $this->currencyRepository()::create(fake()->word(), fake()->unique()->currencyCode());
         $newWallet = $this->walletRepository()::create($newUser, $newCurrency);
 
         $input = [
@@ -120,7 +120,7 @@ class WalletServiceTest extends TestCase
         // Arrange
         //
         $newUser = $this->registerNewUser();
-        $newCurrency = $this->currencyRepository()::create(fake()->word(), fake()->currencyCode());
+        $newCurrency = $this->currencyRepository()::create(fake()->word(), fake()->unique()->currencyCode());
         $newWallet = $this->walletRepository()::create($newUser, $newCurrency);
 
         $input = [

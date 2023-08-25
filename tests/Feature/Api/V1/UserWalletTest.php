@@ -54,7 +54,7 @@ class UserWalletTest extends TestCase
         // Arrange
         //
         $user = $this->registerNewUser();
-        $this->createWallet($user, fake()->word(), fake()->currencyCode());
+        $this->createWallet($user, fake()->word(), fake()->unique()->currencyCode());
 
         //
         // Act
@@ -90,7 +90,7 @@ class UserWalletTest extends TestCase
         // Arrange
         //
         $user = $this->registerNewUser();
-        $payload = ['symbol' => fake()->currencyCode()];
+        $payload = ['symbol' => fake()->unique()->currencyCode()];
 
         //
         // Act
@@ -116,8 +116,8 @@ class UserWalletTest extends TestCase
         // Arrange
         //
         $user = $this->registerNewUser();
-        $newCurrency = $this->currencyService()->add(['name' => fake()->word(), 'symbol' => fake()->currencyCode()]);
-        $payload = ['symbol' => $newCurrency->symbol];
+        $symbol = 'BTC'; // from seeder
+        $payload = ['symbol' => $symbol];
 
         //
         // Act
@@ -180,7 +180,7 @@ class UserWalletTest extends TestCase
         // Arrange
         //
         $user = $this->registerNewUser();
-        $symbol = fake()->currencyCode();
+        $symbol = fake()->unique()->currencyCode();
         $this->createWallet($user, fake()->word(), $symbol);
 
         /** @var Wallet $wallet */

@@ -25,7 +25,7 @@ class CurrencyServiceTest extends TestCase
         //
         $input = [
             'name' => fake()->name(),
-            'symbol' => fake()->currencyCode(),
+            'symbol' => fake()->unique()->currencyCode(),
         ];
 
         //
@@ -48,7 +48,7 @@ class CurrencyServiceTest extends TestCase
         //
         // Arrange
         //
-        $symbol = fake()->currencyCode();
+        $symbol = fake()->unique()->currencyCode();
         $this->currencyService()->add([
             'name' => fake()->name(),
             'symbol' => $symbol,
@@ -79,7 +79,7 @@ class CurrencyServiceTest extends TestCase
         //
         // Arrange
         //
-        $symbol = fake()->currencyCode();
+        $symbol = fake()->unique()->currencyCode();
         $this->currencyService()->add([
             'name' => fake()->name(),
             'symbol' => $symbol,

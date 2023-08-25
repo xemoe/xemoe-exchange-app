@@ -22,7 +22,7 @@ class WalletRepositoryTest extends TestCase
         // Arrange
         //
         $newUser = $this->userRepository()->create(fake()->name(), fake()->email(), fake()->password());
-        $newCryptoCurrency = $this->currencyRepository()->create(fake()->word(), fake()->currencyCode());
+        $newCryptoCurrency = $this->currencyRepository()->create(fake()->word(), fake()->unique()->currencyCode());
 
         //
         // Act
@@ -50,7 +50,7 @@ class WalletRepositoryTest extends TestCase
         $newUser = $this->userRepository()->create(fake()->name(), fake()->email(), fake()->password());
 
         // create new currency model without saving it to database
-        $currencyInstance = $this->currencyRepository()->make(fake()->word(), fake()->currencyCode());
+        $currencyInstance = $this->currencyRepository()->make(fake()->word(), fake()->unique()->currencyCode());
 
         //
         // Exception
@@ -73,7 +73,7 @@ class WalletRepositoryTest extends TestCase
         // Arrange
         //
         $newUser = $this->userRepository()->create(fake()->name(), fake()->email(), fake()->password());
-        $newCryptoCurrency = $this->currencyRepository()->create(fake()->word(), fake()->currencyCode());
+        $newCryptoCurrency = $this->currencyRepository()->create(fake()->word(), fake()->unique()->currencyCode());
         $newWallet = $this->walletRepository()->create($newUser, $newCryptoCurrency);
 
         //

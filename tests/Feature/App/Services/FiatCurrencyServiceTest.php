@@ -23,7 +23,7 @@ class FiatCurrencyServiceTest extends TestCase
         //
         $input = [
             'name' => fake()->name(),
-            'symbol' => fake()->currencyCode(),
+            'symbol' => fake()->unique()->currencyCode(),
         ];
 
         //
@@ -46,7 +46,7 @@ class FiatCurrencyServiceTest extends TestCase
         //
         // Arrange
         //
-        $symbol = fake()->currencyCode();
+        $symbol = fake()->unique()->currencyCode();
         $this->fiatCurrencyService()->add([
             'name' => fake()->name(),
             'symbol' => $symbol,
@@ -77,7 +77,7 @@ class FiatCurrencyServiceTest extends TestCase
         //
         // Arrange
         //
-        $symbol = fake()->currencyCode();
+        $symbol = fake()->unique()->currencyCode();
         $this->fiatCurrencyService()->add([
             'name' => fake()->name(),
             'symbol' => $symbol,

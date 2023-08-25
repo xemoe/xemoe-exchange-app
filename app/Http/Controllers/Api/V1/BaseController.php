@@ -14,9 +14,10 @@ abstract class BaseController extends Controller
      * success response method.
      * @param $result
      * @param $message
+     * @param int $statusCode
      * @return Response|JsonResponse
      */
-    public function sendResponse($result, $message): Response|JsonResponse
+    public function sendResponse($result, $message, int $statusCode = 200): Response|JsonResponse
     {
         $response = [
             'success' => true,
@@ -24,10 +25,10 @@ abstract class BaseController extends Controller
             'message' => $message,
         ];
 
-        return response()->json($response, 200);
+        return response()->json($response, $statusCode);
     }
 
-    protected function createSuccessResponse(User $user): array
+    protected function createAuthSuccessResponse(User $user): array
     {
         return [
             'token' => AuthenticationService::getToken($user),
@@ -39,10 +40,10 @@ abstract class BaseController extends Controller
      * return error response.
      * @param $error
      * @param array $errorMessages
-     * @param int $code
+     * @param int $statusCode
      * @return JsonResponse
      */
-    public function sendError($error, array $errorMessages = [], int $code = 404): JsonResponse
+    public function sendError($error, array $errorMessages = [], int $statusCode = 404): JsonResponse
     {
         $response = [
             'success' => false,
@@ -53,6 +54,6 @@ abstract class BaseController extends Controller
             $response['data'] = $errorMessages;
         }
 
-        return response()->json($response, $code);
+        return response()->json($response, $statusCode);
     }
 }

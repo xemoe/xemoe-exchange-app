@@ -31,7 +31,7 @@ class RegisterController extends BaseController
         }
 
         return $this->sendResponse(
-            $this->createSuccessResponse($result),
+            $this->createAuthSuccessResponse($result),
             __('User registered successfully.')
         );
     }

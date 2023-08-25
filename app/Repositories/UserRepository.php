@@ -25,4 +25,13 @@ class UserRepository
             'password' => Hash::make($password)
         ]);
     }
+
+    /**
+     * @param string $id
+     * @return User|null
+     */
+    public function find(string $id): ?User
+    {
+        return User::find($id);
+    }
 }

@@ -18,6 +18,7 @@ return new class extends Migration
 
             $table->string('address')->unique();
             $table->decimal('balance', 30, 18)->default(0);
+            $table->softDeletes();
 
             $table->foreignUuid('user_id')->constrained()->cascadeOnDelete();
             $table->foreignUuid('currency_id')->constrained('crypto_currencies')->cascadeOnDelete();

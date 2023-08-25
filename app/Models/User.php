@@ -6,6 +6,7 @@ use App\Models\Enums\RoleNameEnum;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -13,11 +14,14 @@ use Laravel\Sanctum\HasApiTokens;
 /**
  * @method static create(array $array)
  * @method static count()
+ * @method static find(string $user_id)
  * @property string $name
+ * @property string $email
+ * @property string $id
  */
 class User extends Authenticatable
 {
-    use HasUuids, HasApiTokens, HasFactory, Notifiable;
+    use HasUuids, HasApiTokens, HasFactory, Notifiable, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.

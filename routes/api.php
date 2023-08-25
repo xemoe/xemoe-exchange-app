@@ -18,7 +18,17 @@ Route::prefix('v1')->name('api.v1.')->group(function () {
 
     include __DIR__ . '/_api/v1/auth.php';
 
-    Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-        return $request->user();
-    })->name('user');
+    //
+    // Protected routes for authorized users
+    // with token in header
+    //
+    Route::middleware('auth:sanctum')->group(function () {
+
+        Route::get('/user', static function (Request $request) {
+            return $request->user();
+        })->name('user');
+
+        include __DIR__ . '/_api/v1/wallet.php';
+
+    });
 });

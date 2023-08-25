@@ -2,11 +2,12 @@
 
 namespace App\Providers;
 
-use App\Repositories\CryptoCurrencyRepository;
+use App\Repositories\CurrencyRepository;
 use App\Repositories\UserRepository;
 use App\Repositories\UserRolesRepository;
 use App\Repositories\WalletRepository;
 use App\Services\AuthenticationService;
+use App\Services\CurrencyService;
 use App\Services\UserService;
 use Illuminate\Support\ServiceProvider;
 
@@ -28,8 +29,8 @@ class AppServiceProvider extends ServiceProvider
         });
 
         // CryptoCurrencyRepository
-        $this->app->singleton(CryptoCurrencyRepository::class, function ($app) {
-            return new CryptoCurrencyRepository();
+        $this->app->singleton(CurrencyRepository::class, function ($app) {
+            return new CurrencyRepository();
         });
 
         // WalletRepository
@@ -48,6 +49,13 @@ class AppServiceProvider extends ServiceProvider
         // AuthenticationService
         $this->app->singleton(AuthenticationService::class, function ($app) {
             return new AuthenticationService();
+        });
+
+        // CurrencyService
+        $this->app->singleton(CurrencyService::class, function ($app) {
+            return new CurrencyService(
+                $app->make(CurrencyRepository::class),
+            );
         });
     }
 

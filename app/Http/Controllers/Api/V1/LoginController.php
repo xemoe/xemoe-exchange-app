@@ -28,7 +28,7 @@ class LoginController extends BaseController
     {
         if (Auth::guard('web')->attempt($request->only('email', 'password'))) {
             return $this->sendResponse(
-                $this->createSuccessResponse(Auth::user()),
+                $this->createAuthSuccessResponse(Auth::user()),
                 __('User logged in successfully.')
             );
         } else {

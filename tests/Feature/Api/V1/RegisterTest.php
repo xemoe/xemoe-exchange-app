@@ -2,8 +2,7 @@
 
 namespace Tests\Feature\Api\V1;
 
-use App\Models\User;
-use App\Services\AuthenticationService;
+use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -47,17 +46,16 @@ class RegisterTest extends TestCase
         ]);
     }
 
+    /**
+     * @throws BindingResolutionException
+     */
     public function test_login_success(): void
     {
         //
         // Arrange
         //
         $password = fake()->password(16);
-        $user = User::factory()->create([
-            'name' => fake()->name(),
-            'email' => fake()->email(),
-            'password' => bcrypt($password)
-        ]);
+        $user = $this->registerNewUser($password);
 
         $payload = [
             'email' => $user->email,
@@ -101,22 +99,23 @@ class RegisterTest extends TestCase
         $response->assertStatus(401);
     }
 
+    /**
+     * @throws BindingResolutionException
+     */
     public function test_get_user_success(): void
     {
         //
         // Arrange
         //
-        $user = User::factory()->create([
-            'email' => fake()->email(),
-            'password' => fake()->password(16),
-        ]);
-
-        $bearerToken = AuthenticationService::getToken($user);
+        $user = $this->registerNewUser();
 
         //
         // Act
         //
-        $response = $this->actingAs($user)->getJson('/api/v1/user', ['Authorization' => 'Bearer ' . $bearerToken]);
+        $response = $this->actingAs($user)->getJson(
+            '/api/v1/user',
+            $this->getAuthorizationHeader($user)
+        );
 
         //
         // Assert

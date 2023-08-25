@@ -7,7 +7,7 @@ use Illuminate\Database\UniqueConstraintViolationException;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class CryptoCurrencyRepositoryTest extends TestCase
+class CurrencyRepositoryTest extends TestCase
 {
     use RefreshDatabase;
 
@@ -29,7 +29,7 @@ class CryptoCurrencyRepositoryTest extends TestCase
         //
         // Act
         //
-        $result = $this->cryptoCurrencyRepository()->create(
+        $result = $this->currencyRepository()->create(
             $input['name'],
             $input['symbol'],
         );
@@ -57,7 +57,7 @@ class CryptoCurrencyRepositoryTest extends TestCase
             'symbol' => 'BTC',
         ];
 
-        $this->cryptoCurrencyRepository()->create('Bitcoin', 'BTC');
+        $this->currencyRepository()->create('Bitcoin', 'BTC');
         $this->assertDatabaseHas('crypto_currencies', ['symbol' => $input['symbol']]);
 
         //
@@ -68,7 +68,7 @@ class CryptoCurrencyRepositoryTest extends TestCase
         //
         // Act
         //
-        $this->cryptoCurrencyRepository()->create(
+        $this->currencyRepository()->create(
             $input['name'],
             $input['symbol'],
         );

@@ -41,7 +41,7 @@
 
 ---
 
-### 📝 How to run
+### 📝 How to run (with sail)
 **requirement**
 - linux
 - docker
@@ -57,19 +57,27 @@
         laravelsail/php82-composer:latest \
         composer install --ignore-platform-reqs
     ```
-3. run docker with sail
+3. copy `.env.sail` to `.env`
+    ```sh
+    cp .env.sail .env
+    ```
+4. run docker with sail
     ```sh
     ./vendor/bin/sail up -d
     ```
-4. run migration
+5. generate key
+    ```sh
+    ./vendor/bin/sail artisan key:generate
+    ```
+6. run migration
     ```sh
     ./vendor/bin/sail artisan migrate
     ```
-5. run seed
+7. run seed
     ```sh
     ./vendor/bin/sail artisan db:seed
     ```
-6. run test
+8. run test
     ```sh
     ./vendor/bin/sail artisan test
     ```

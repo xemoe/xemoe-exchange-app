@@ -6,13 +6,15 @@ use App\Models\Enums\RoleNameEnum;
 use App\Models\Role;
 use App\Models\User;
 use App\Repositories\UserRepository;
+use App\Repositories\UserRolesRepository;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\MessageBag;
 
 class UserService
 {
     public function __construct(
-        private readonly UserRepository $userRepository
+        private readonly UserRepository $userRepository,
+        private readonly UserRolesRepository $userRolesRepository,
     )
     {
     }
@@ -24,9 +26,9 @@ class UserService
     public function register(array $input): MessageBag|User
     {
         $validator = Validator::make($input, [
-            'name' => 'required',
+            'name' => 'required|min:3|max:255',
             'email' => 'required|email|unique:users',
-            'password' => 'required',
+            'password' => 'required|min:8|max:255',
             'confirm_password' => 'required|same:password',
         ]);
 
@@ -41,9 +43,7 @@ class UserService
         );
 
         if ($user->exists) {
-            $user->roleUser()->create([
-                'role_id' => Role::where(['name' => RoleNameEnum::Regular])->first()->id,
-            ]);
+            $this->userRolesRepository->setRole($user, RoleNameEnum::Regular);
         }
 
         return $user;

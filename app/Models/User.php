@@ -50,14 +50,19 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function roleUser(): HasMany
+    public function roleUsers(): HasMany
     {
         return $this->hasMany(RoleUser::class);
     }
 
+    public function wallets(): HasMany
+    {
+        return $this->hasMany(Wallet::class);
+    }
+
     private function hasRole(RoleNameEnum $roleName): bool
     {
-        return $this->roleUser()->whereHas('role', static function ($query) use ($roleName) {
+        return $this->roleUsers()->whereHas('role', static function ($query) use ($roleName) {
             $query->where('name', $roleName);
         })->exists();
     }

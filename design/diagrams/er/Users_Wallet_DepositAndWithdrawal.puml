@@ -8,15 +8,6 @@ entity CryptoCurrency {
     --
     * name : string
     * symbol : string
-    * rank : integer
-    * price_usd : decimal
-    * price_btc : decimal
-    * volume_usd_24h : decimal
-    * market_cap_usd : decimal
-    * available_supply : decimal
-    * total_supply : decimal
-    * max_supply : decimal
-    * blockchain_network_address : string
     --
     * created_at
     * updated_at

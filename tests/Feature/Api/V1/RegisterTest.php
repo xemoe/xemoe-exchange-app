@@ -1,6 +1,6 @@
 <?php
 
-namespace Api\V1;
+namespace Tests\Feature\Api\V1;
 
 use App\Models\User;
 use App\Services\AuthenticationService;
@@ -18,7 +18,7 @@ class RegisterTest extends TestCase
         //
         // Arrange
         //
-        $password = fake()->password();
+        $password = fake()->password(16);
         $payload = [
             'name' => fake()->name(),
             'email' => fake()->email(),
@@ -52,7 +52,7 @@ class RegisterTest extends TestCase
         //
         // Arrange
         //
-        $password = fake()->password;
+        $password = fake()->password(16);
         $user = User::factory()->create([
             'name' => fake()->name(),
             'email' => fake()->email(),
@@ -108,7 +108,7 @@ class RegisterTest extends TestCase
         //
         $user = User::factory()->create([
             'email' => fake()->email(),
-            'password' => fake()->password(),
+            'password' => fake()->password(16),
         ]);
 
         $bearerToken = AuthenticationService::getToken($user);

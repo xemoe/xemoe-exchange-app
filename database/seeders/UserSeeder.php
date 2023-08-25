@@ -63,7 +63,7 @@ class UserSeeder extends Seeder
         $this->command->info('  Role: ' . $adminRole->id);
         $this->command->newLine();
 
-        $user->roleUser()->create([
+        $user->roleUsers()->create([
             'role_id' => $adminRole->id,
         ]);
     }

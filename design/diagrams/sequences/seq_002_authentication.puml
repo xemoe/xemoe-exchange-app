@@ -1,0 +1,16 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+skinparam handwritten true
+autonumber
+
+header Authentication
+
+actor "Regular User" as Alice
+participant "Authentication Service" as Service #lightgreen
+
+Alice -> Service: POST /api/v1/login
+Service -> Service: Validate credentials
+Alice <-- Service: Return 200 OK with JWT
+
+@enduml

@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+skinparam handwritten true
+autonumber
+
+header Register
+
+actor Guest as Guest
+participant "Register Service" as Service #lightgreen
+
+Guest -> Service: POST /api/v1/register
+Service -> Service: validate user
+Service -> Service: create user
+Service -> Service: create token
+
+Guest <-- Service: Return 201 Created and JWT token
+
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+skinparam handwritten true
+autonumber
+
+header "Create new wallet"
+
+actor "Regular User" as Alice
+participant "Exchange Service" as Service #lightblue
+
+' Request JWT
+Alice -> Service: POST /api/v1/login
+Service -> Service: Validate credentials
+Alice <-- Service: Return 200 OK with JWT
+
+' Create new wallet
+Alice -> Service: POST /api/v1/wallet (with JWT)
+Service -> Service: Validate JWT
+Service -> Service: Create new wallet
+Alice <-- Service: Return 200 OK with wallet data
+
+@enduml

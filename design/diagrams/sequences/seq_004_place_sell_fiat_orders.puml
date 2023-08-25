@@ -1,0 +1,32 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+skinparam handwritten true
+autonumber
+
+header "Place sell fiat orders"
+
+actor "Regular User" as Alice
+participant "Exchange Service" as Service #lightblue
+
+' Request JWT
+Alice -> Service: POST /api/v1/login
+Service -> Service: Validate credentials
+Alice <-- Service: Return 200 OK with JWT
+
+' Check available pairs
+Alice -> Service: POST /api/v1/fiat/trading_pairs (with JWT)
+Service -> Service: Check available pairs
+Alice <-- Service: Return 200 OK with pairs
+
+' Place sell order
+Alice -> Service: POST /api/v1/fiat/orders (with JWT)
+
+Service -> Service: Check available pairs
+Service -> Service: Check user balance
+Service -> Service: Check user trading limits
+Service -> Service: Place order
+
+Alice <-- Service: Return 200 OK with order details
+
+@enduml

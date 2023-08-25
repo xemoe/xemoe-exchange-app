@@ -22,8 +22,8 @@ class CurrencyRepositoryTest extends TestCase
         // Arrange
         //
         $input = [
-            'name' => 'Bitcoin',
-            'symbol' => 'BTC',
+            'name' => fake()->word(),
+            'symbol' => fake()->currencyCode(),
         ];
 
         //
@@ -53,11 +53,11 @@ class CurrencyRepositoryTest extends TestCase
         // Arrange
         //
         $input = [
-            'name' => 'New Bitcoin',
-            'symbol' => 'BTC',
+            'name' => fake()->word(),
+            'symbol' => fake()->currencyCode(),
         ];
 
-        $this->currencyRepository()->create('Bitcoin', 'BTC');
+        $this->currencyRepository()->create(fake()->word(), $input['symbol']);
         $this->assertDatabaseHas('crypto_currencies', ['symbol' => $input['symbol']]);
 
         //

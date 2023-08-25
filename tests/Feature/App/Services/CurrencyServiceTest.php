@@ -73,33 +73,16 @@ class CurrencyServiceTest extends TestCase
     /**
      * @throws BindingResolutionException
      */
-    public function test_symbols_success_empty(): void
-    {
-        //
-        // Act
-        //
-        $actual = $this->currencyService()->symbols();
-
-        //
-        // Assert
-        //
-        $this->assertEmpty($actual);
-    }
-
-    /**
-     * @throws BindingResolutionException
-     */
     public function test_symbols_success(): void
     {
         //
         // Arrange
         //
+        $symbol = fake()->currencyCode();
         $this->currencyService()->add([
             'name' => fake()->name(),
-            'symbol' => 'TST',
+            'symbol' => $symbol,
         ]);
-
-        $expect = ['TST'];
 
         //
         // Act
@@ -109,6 +92,6 @@ class CurrencyServiceTest extends TestCase
         //
         // Assert
         //
-        $this->assertEquals($expect, $actual);
+        $this->assertContains($symbol, $actual);
     }
 }

@@ -28,7 +28,7 @@ class RegisterTest extends TestCase
         //
         // Act
         //
-        $response = $this->postJson('/api/v1/register', $payload);
+        $response = $this->postJson(route('api.v1.auth.register'), $payload);
 
         //
         // Assert
@@ -65,7 +65,7 @@ class RegisterTest extends TestCase
         //
         // Act
         //
-        $response = $this->postJson('/api/v1/login', $payload);
+        $response = $this->postJson(route('api.v1.auth.login'), $payload);
 
         //
         // Assert
@@ -91,7 +91,7 @@ class RegisterTest extends TestCase
         //
         // Act
         //
-        $response = $this->postJson('/api/v1/login', $payload);
+        $response = $this->postJson(route('api.v1.auth.login'), $payload);
 
         //
         // Assert
@@ -113,7 +113,7 @@ class RegisterTest extends TestCase
         // Act
         //
         $response = $this->actingAs($user)->getJson(
-            '/api/v1/user',
+            route('api.v1.auth.user'),
             $this->getAuthorizationHeader($user)
         );
 

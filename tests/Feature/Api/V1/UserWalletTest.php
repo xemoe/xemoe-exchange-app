@@ -17,7 +17,7 @@ class UserWalletTest extends TestCase
 
     public function test_get_wallet_failure_no_authorized(): void
     {
-        $response = $this->get('/api/v1/wallet');
+        $response = $this->get(route('api.v1.wallets.index'));
         $response->assertStatus(Response::HTTP_UNAUTHORIZED);
     }
 
@@ -35,7 +35,7 @@ class UserWalletTest extends TestCase
         // Act
         //
         $response = $this->get(
-            '/api/v1/wallet',
+            route('api.v1.wallets.index'),
             $this->getAuthorizationHeader($user)
         );
 
@@ -54,13 +54,13 @@ class UserWalletTest extends TestCase
         // Arrange
         //
         $user = $this->registerNewUser();
-        $this->createWallet($user, 'Bitcoin', 'BTC');
+        $this->createWallet($user, fake()->word(), fake()->currencyCode());
 
         //
         // Act
         //
         $response = $this->get(
-            '/api/v1/wallet',
+            route('api.v1.wallets.index'),
             $this->getAuthorizationHeader($user)
         );
 
@@ -77,7 +77,7 @@ class UserWalletTest extends TestCase
 
     public function test_create_wallet_failure_no_authorized(): void
     {
-        $response = $this->post('/api/v1/wallet');
+        $response = $this->post(route('api.v1.wallets.store'));
         $response->assertStatus(Response::HTTP_UNAUTHORIZED);
     }
 
@@ -96,7 +96,7 @@ class UserWalletTest extends TestCase
         // Act
         //
         $response = $this->post(
-            '/api/v1/wallet',
+            route('api.v1.wallets.store'),
             $payload,
             $this->getAuthorizationHeader($user)
         );
@@ -123,7 +123,7 @@ class UserWalletTest extends TestCase
         // Act
         //
         $response = $this->post(
-            '/api/v1/wallet',
+            route('api.v1.wallets.store'),
             $payload,
             $this->getAuthorizationHeader($user)
         );
@@ -141,7 +141,7 @@ class UserWalletTest extends TestCase
 
     public function test_destroy_wallet_failure_no_authorized(): void
     {
-        $response = $this->delete('/api/v1/wallet/foo');
+        $response = $this->delete(route('api.v1.wallets.destroy', ['id' => 'foo']));
         $response->assertStatus(Response::HTTP_UNAUTHORIZED);
     }
 
@@ -160,7 +160,7 @@ class UserWalletTest extends TestCase
         // Act
         //
         $response = $this->delete(
-            '/api/v1/wallet/foo',
+            route('api.v1.wallets.destroy', ['id' => 'foo']),
             $payload,
             $this->getAuthorizationHeader($user)
         );
@@ -192,7 +192,7 @@ class UserWalletTest extends TestCase
         // Act
         //
         $response = $this->delete(
-            '/api/v1/wallet/' . $wallet->id,
+            route('api.v1.wallets.destroy', ['id' => $wallet->id]),
             [],
             $this->getAuthorizationHeader($user)
         );

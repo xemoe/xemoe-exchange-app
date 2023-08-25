@@ -24,9 +24,9 @@ Route::prefix('v1')->name('api.v1.')->group(function () {
     //
     Route::middleware('auth:sanctum')->group(function () {
 
-        Route::get('/user', static function (Request $request) {
+        Route::get('/auth/user', static function (Request $request) {
             return $request->user();
-        })->name('user');
+        })->name('auth.user');
 
         include __DIR__ . '/_api/v1/wallet.php';
 

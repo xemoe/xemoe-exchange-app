@@ -5,10 +5,13 @@ namespace Tests;
 use App\Models\User;
 use App\Models\Wallet;
 use App\Repositories\CurrencyRepository;
+use App\Repositories\FiatCurrencyRepository;
+use App\Repositories\TradingPairRepository;
 use App\Repositories\UserRepository;
 use App\Repositories\WalletRepository;
 use App\Services\AuthenticationService;
 use App\Services\CurrencyService;
+use App\Services\FiatCurrencyService;
 use App\Services\UserService;
 use App\Services\WalletService;
 use Illuminate\Contracts\Container\BindingResolutionException;
@@ -29,6 +32,14 @@ abstract class TestCase extends BaseTestCase
     /**
      * @throws BindingResolutionException
      */
+    protected function fiatCurrencyRepository(): FiatCurrencyRepository
+    {
+        return app()->make(FiatCurrencyRepository::class);
+    }
+
+    /**
+     * @throws BindingResolutionException
+     */
     protected function userRepository(): UserRepository
     {
         return app()->make(UserRepository::class);
@@ -40,6 +51,11 @@ abstract class TestCase extends BaseTestCase
     protected function walletRepository(): WalletRepository
     {
         return app()->make(WalletRepository::class);
+    }
+
+    protected function tradingPairRepository(): TradingPairRepository
+    {
+        return $this->app->make(TradingPairRepository::class);
     }
 
     /**
@@ -56,6 +72,14 @@ abstract class TestCase extends BaseTestCase
     protected function currencyService(): CurrencyService
     {
         return app()->make(CurrencyService::class);
+    }
+
+    /**
+     * @throws BindingResolutionException
+     */
+    protected function fiatCurrencyService(): FiatCurrencyService
+    {
+        return app()->make(FiatCurrencyService::class);
     }
 
     /**

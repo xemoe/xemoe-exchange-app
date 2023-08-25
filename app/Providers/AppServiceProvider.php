@@ -3,11 +3,14 @@
 namespace App\Providers;
 
 use App\Repositories\CurrencyRepository;
+use App\Repositories\FiatCurrencyRepository;
+use App\Repositories\TradingPairRepository;
 use App\Repositories\UserRepository;
 use App\Repositories\UserRolesRepository;
 use App\Repositories\WalletRepository;
 use App\Services\AuthenticationService;
 use App\Services\CurrencyService;
+use App\Services\FiatCurrencyService;
 use App\Services\UserService;
 use Illuminate\Support\ServiceProvider;
 
@@ -33,9 +36,19 @@ class AppServiceProvider extends ServiceProvider
             return new CurrencyRepository();
         });
 
+        // FiatCurrencyRepository
+        $this->app->singleton(FiatCurrencyRepository::class, function ($app) {
+            return new FiatCurrencyRepository();
+        });
+
         // WalletRepository
         $this->app->singleton(WalletRepository::class, function ($app) {
             return new WalletRepository();
+        });
+
+        // TradingPairRepository
+        $this->app->singleton(TradingPairRepository::class, function ($app) {
+            return new TradingPairRepository();
         });
 
         // UserService
@@ -55,6 +68,13 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(CurrencyService::class, function ($app) {
             return new CurrencyService(
                 $app->make(CurrencyRepository::class),
+            );
+        });
+
+        // FiatCurrencyService
+        $this->app->singleton(FiatCurrencyService::class, function ($app) {
+            return new FiatCurrencyService(
+                $app->make(FiatCurrencyRepository::class),
             );
         });
     }

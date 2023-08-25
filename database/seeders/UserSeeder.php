@@ -6,6 +6,7 @@ use App\Models\CryptoCurrency;
 use App\Models\Enums\RoleNameEnum;
 use App\Models\Role;
 use App\Models\User;
+use App\Repositories\UserRolesRepository;
 use App\Services\WalletService;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Database\Seeder;
@@ -44,10 +45,13 @@ class UserSeeder extends Seeder
         $this->createAdminRole();
         $this->createRegularRole();
 
+        //
+        // Create admin user and default wallet
+        //
         $password = fake()->password(16);
         $adminUser = $this->createAdminUser($password);
 
-        $this->command->info('  Creating default user...');
+        $this->command->info('  Creating default admin user...');
         $this->command->info('  Name: ' . $adminUser->name);
         $this->command->info('  Email: ' . $adminUser->email);
         $this->command->warn('  Password: ' . $password);
@@ -55,6 +59,20 @@ class UserSeeder extends Seeder
 
         $seedWalletSymbols = ['BTC', 'ETH', 'XRP'];
         $this->createWalletForUser($adminUser, $seedWalletSymbols);
+
+        //
+        // Create regular user and default wallet
+        //
+        $password = fake()->password(16);
+        $regularUser = $this->createRegularUser($password);
+
+        $this->command->info('  Creating default regular user...');
+        $this->command->info('  Name: ' . $regularUser->name);
+        $this->command->info('  Email: ' . $regularUser->email);
+        $this->command->warn('  Password: ' . $password);
+        $this->command->newLine();
+
+        $this->createWalletForUser($regularUser, $seedWalletSymbols);
     }
 
     private function createAdminRole(): void
@@ -73,6 +91,9 @@ class UserSeeder extends Seeder
         ]);
     }
 
+    /**
+     * @throws BindingResolutionException
+     */
     private function createAdminUser(string $password): User
     {
         $user = User::factory()->create([
@@ -81,10 +102,27 @@ class UserSeeder extends Seeder
             'password' => $password
         ]);
 
-        $adminRole = Role::where(['name' => RoleNameEnum::Admin])->firstOrFail();
-        $user->roleUsers()->create([
-            'role_id' => $adminRole->id,
+        /** @var UserRolesRepository $repository */
+        $repository = app()->make(UserRolesRepository::class);
+        $repository->setRole($user, RoleNameEnum::Admin);
+
+        return $user;
+    }
+
+    /**
+     * @throws BindingResolutionException
+     */
+    private function createRegularUser(string $password): User
+    {
+        $user = User::factory()->create([
+            'name' => fake()->name,
+            'email' => fake()->email(),
+            'password' => $password
         ]);
+
+        /** @var UserRolesRepository $repository */
+        $repository = app()->make(UserRolesRepository::class);
+        $repository->setRole($user, RoleNameEnum::Regular);
 
         return $user;
     }

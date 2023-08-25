@@ -42,6 +42,9 @@ class WalletServiceTest extends TestCase
             'user_id' => $newUser->id,
             'currency_id' => $newCurrency->id,
         ]);
+
+        // Check relationship
+        $this->assertCount(1, $newUser->currencies);
     }
 
     /**

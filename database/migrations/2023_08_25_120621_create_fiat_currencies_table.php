@@ -11,16 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('role_users', static function (Blueprint $table) {
+        Schema::create('fiat_currencies', static function (Blueprint $table) {
 
             $table->uuid('id')->primary();
             $table->timestamps();
 
-            $table->foreignUuid('user_id')->constrained()->cascadeOnDelete();
-            $table->foreignUuid('role_id')->constrained()->cascadeOnDelete();
-
-            // Prevent from creating duplicate records
-            $table->unique(['user_id', 'role_id']);
+            $table->string('name', 255);
+            $table->string('symbol', 32)->unique();
+            $table->softDeletes();
 
         });
     }
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('role_users');
+        Schema::dropIfExists('fiat_currencies');
     }
 };

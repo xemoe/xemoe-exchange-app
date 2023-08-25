@@ -2,14 +2,12 @@
 
 namespace Tests\Feature\App\Services;
 
-use App\Models\User;
-use App\Services\CurrencyService;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\MessageBag;
 use Tests\TestCase;
 
-class CurrencyServiceTest extends TestCase
+class FiatCurrencyServiceTest extends TestCase
 {
     use RefreshDatabase;
 
@@ -31,13 +29,13 @@ class CurrencyServiceTest extends TestCase
         //
         // Act
         //
-        $actual = $this->currencyService()->add($input);
+        $actual = $this->fiatCurrencyService()->add($input);
 
         //
         // Assert
         //
         $this->assertTrue($actual->exists);
-        $this->assertDatabaseHas('crypto_currencies', $input);
+        $this->assertDatabaseHas('fiat_currencies', $input);
     }
 
     /**
@@ -49,7 +47,7 @@ class CurrencyServiceTest extends TestCase
         // Arrange
         //
         $symbol = fake()->currencyCode();
-        $this->currencyService()->add([
+        $this->fiatCurrencyService()->add([
             'name' => fake()->name(),
             'symbol' => $symbol,
         ]);
@@ -62,13 +60,13 @@ class CurrencyServiceTest extends TestCase
         //
         // Act
         //
-        $actual = $this->currencyService()->add($input);
+        $actual = $this->fiatCurrencyService()->add($input);
 
         //
         // Assert
         //
         $this->assertInstanceOf(MessageBag::class, $actual);
-        $this->assertDatabaseMissing('crypto_currencies', $input);
+        $this->assertDatabaseMissing('fiat_currencies', $input);
     }
 
     /**
@@ -80,7 +78,7 @@ class CurrencyServiceTest extends TestCase
         // Arrange
         //
         $symbol = fake()->currencyCode();
-        $this->currencyService()->add([
+        $this->fiatCurrencyService()->add([
             'name' => fake()->name(),
             'symbol' => $symbol,
         ]);
@@ -88,7 +86,7 @@ class CurrencyServiceTest extends TestCase
         //
         // Act
         //
-        $actual = $this->currencyService()->symbols();
+        $actual = $this->fiatCurrencyService()->symbols();
 
         //
         // Assert

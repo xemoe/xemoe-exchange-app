@@ -5,6 +5,7 @@ namespace App\Repositories;
 use App\Models\Enums\RoleNameEnum;
 use App\Models\Role;
 use App\Models\User;
+use Illuminate\Support\Str;
 
 class UserRolesRepository
 {
@@ -15,9 +16,17 @@ class UserRolesRepository
      */
     public function setRole(User $user, RoleNameEnum $roleName): void
     {
-        $user->roleUsers()->create([
-            'role_id' => Role::where(['name' => $roleName])->first()->id,
-        ]);
+        //
+        // Prevent from creating duplicate records
+        //
+        if ($user->roles()->where(['name' => $roleName])->exists()) {
+            return;
+        }
+
+        $user->roles()->attach(
+            Role::where(['name' => $roleName])->first()->id,
+            ['id' => Str::orderedUuid()]
+        );
     }
 
     /**
@@ -27,8 +36,8 @@ class UserRolesRepository
      */
     public function unsetRole(User $user, RoleNameEnum $roleName): void
     {
-        $user->roleUsers()->where([
-            'role_id' => Role::where(['name' => $roleName])->first()->id
-        ])->delete();
+        $user->roles()->detach(
+            Role::where(['name' => $roleName])->first()->id
+        );
     }
 }

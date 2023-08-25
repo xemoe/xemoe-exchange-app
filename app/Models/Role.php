@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 /**
  * @method static create(array $array)
  * @method static where(array $array)
+ * @property string $id
  */
 class Role extends Model
 {

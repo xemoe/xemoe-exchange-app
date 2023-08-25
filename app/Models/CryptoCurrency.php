@@ -11,6 +11,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static create(string[] $array)
  * @method static make(string[] $array)
  * @method static where(string[] $array)
+ * @method static count()
+ * @method static whereIn(string $string, array|string[] $symbols)
  * @property string $id
  * @property string $symbol
  */

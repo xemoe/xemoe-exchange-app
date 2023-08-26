@@ -5,6 +5,7 @@ namespace App\Repositories;
 use App\Models\CryptoCurrency;
 use App\Models\FiatCurrency;
 use App\Models\TradingPair;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use RuntimeException;
 
@@ -30,7 +31,10 @@ class TradingPairRepository
         ]);
     }
 
-    public function createCryptoToFiat(CryptoCurrency $cryptoCurrency, FiatCurrency $fiatCurrency): TradingPair
+    public function createCryptoToFiat(
+        CryptoCurrency $cryptoCurrency,
+        FiatCurrency   $fiatCurrency
+    ): TradingPair
     {
         return TradingPair::create([
             'base_currency_symbol' => $cryptoCurrency->symbol,
@@ -43,7 +47,10 @@ class TradingPairRepository
         ]);
     }
 
-    public function createFiatToCrypto(FiatCurrency $fiatCurrency, CryptoCurrency $cryptoCurrency): TradingPair
+    public function createFiatToCrypto(
+        FiatCurrency   $fiatCurrency,
+        CryptoCurrency $cryptoCurrency
+    ): TradingPair
     {
         return TradingPair::create([
             'base_currency_symbol' => $fiatCurrency->symbol,
@@ -59,5 +66,12 @@ class TradingPairRepository
     public function all(): Collection
     {
         return TradingPair::all();
+    }
+
+    public function whereAnyCurrencyType(string $currencyType): Builder
+    {
+        return TradingPair::query()
+            ->where('base_currency_type', $currencyType)
+            ->orWhere('quote_currency_type', $currencyType);
     }
 }

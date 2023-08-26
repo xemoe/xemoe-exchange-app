@@ -11,6 +11,7 @@ use App\Repositories\WalletRepository;
 use App\Services\AuthenticationService;
 use App\Services\CurrencyService;
 use App\Services\FiatCurrencyService;
+use App\Services\TradingPairService;
 use App\Services\UserService;
 use Illuminate\Support\ServiceProvider;
 
@@ -74,6 +75,15 @@ class AppServiceProvider extends ServiceProvider
         // FiatCurrencyService
         $this->app->singleton(FiatCurrencyService::class, function ($app) {
             return new FiatCurrencyService(
+                $app->make(FiatCurrencyRepository::class),
+            );
+        });
+
+        // TradingPairService
+        $this->app->singleton(TradingPairService::class, function ($app) {
+            return new TradingPairService(
+                $app->make(TradingPairRepository::class),
+                $app->make(CurrencyRepository::class),
                 $app->make(FiatCurrencyRepository::class),
             );
         });

@@ -1,0 +1,29 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+skinparam handwritten true
+autonumber
+
+header "Cancel fiat orders"
+
+actor "Regular User" as Alice
+participant "Exchange Service" as Service #lightblue
+
+' Request JWT
+Alice -> Service: POST /api/v1/login
+Service -> Service: Validate credentials
+Alice <-- Service: Return 200 OK with JWT
+
+' Check my fiat place orders
+Alice -> Service: GET /api/v1/fiat/orders
+Service -> Service: Validate JWT
+Service -> Service: Get fiat orders
+Alice <-- Service: Return 200 OK with fiat orders
+
+' Delete fiat order
+Alice -> Service: DELETE /api/v1/fiat/orders/{id}
+Service -> Service: Validate JWT
+Service -> Service: Delete fiat order
+Alice <-- Service: Return 200 OK with fiat order
+
+@enduml

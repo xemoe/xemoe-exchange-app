@@ -28,7 +28,8 @@ Route::prefix('v1')->name('api.v1.')->group(function () {
             return $request->user();
         })->name('auth.user');
 
-        include __DIR__ . '/_api/v1/wallet.php';
+        include __DIR__ . '/_api/v1/wallets.php';
+        include __DIR__ . '/_api/v1/fiat_trading_pairs.php';
 
     });
 });

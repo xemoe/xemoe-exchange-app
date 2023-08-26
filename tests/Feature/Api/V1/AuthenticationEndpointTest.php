@@ -6,7 +6,7 @@ use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class RegisterTest extends TestCase
+class AuthenticationEndpointTest extends TestCase
 {
     use RefreshDatabase;
 

@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Tests\Feature\HttpStatusCode;
 use Tests\TestCase;
 
-class UserWalletTest extends TestCase
+class UserWalletsEndpointTest extends TestCase
 {
     use RefreshDatabase;
 

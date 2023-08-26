@@ -41,6 +41,12 @@
 
 ---
 
+### 📌 Migrate & Seed
+
+![](./render1693010805513.gif)
+
+---
+
 ### 📝 How to run (with sail)
 **requirement**
 - linux

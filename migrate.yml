@@ -1,0 +1,347 @@
+# The configurations that used for the recording, feel free to edit them
+config:
+
+  # Specify a command to be executed
+  # like `/bin/bash -l`, `ls`, or any other commands
+  # the default is bash for Linux
+  # or powershell.exe for Windows
+  command: bash -l
+  
+  # Specify the current working directory path
+  # the default is the current working directory path
+  cwd: /home/xemoe/Workspaces/test/xemoe-exchange-app
+  
+  # Export additional ENV variables
+  env:
+    recording: true
+  
+  # Explicitly set the number of columns
+  # or use `auto` to take the current
+  # number of columns of your shell
+  cols: 169
+  
+  # Explicitly set the number of rows
+  # or use `auto` to take the current
+  # number of rows of your shell
+  rows: 51
+  
+  # Amount of times to repeat GIF
+  # If value is -1, play once
+  # If value is 0, loop indefinitely
+  # If value is a positive number, loop n times
+  repeat: 0
+  
+  # Quality
+  # 1 - 100
+  quality: 100
+  
+  # Delay between frames in ms
+  # If the value is `auto` use the actual recording delays
+  frameDelay: auto
+  
+  # Maximum delay between frames in ms
+  # Ignored if the `frameDelay` isn't set to `auto`
+  # Set to `auto` to prevent limiting the max idle time
+  maxIdleTime: 2000
+  
+  # The surrounding frame box
+  # The `type` can be null, window, floating, or solid`
+  # To hide the title use the value null
+  # Don't forget to add a backgroundColor style with a null as type
+  frameBox:
+    type: floating
+    title: Terminalizer
+    style:
+      border: 0px black solid
+      # boxShadow: none
+      # margin: 0px
+  
+  # Add a watermark image to the rendered gif
+  # You need to specify an absolute path for
+  # the image on your machine or a URL, and you can also
+  # add your own CSS styles
+  watermark:
+    imagePath: null
+    style:
+      position: absolute
+      right: 15px
+      bottom: 15px
+      width: 100px
+      opacity: 0.9
+  
+  # Cursor style can be one of
+  # `block`, `underline`, or `bar`
+  cursorStyle: block
+  
+  # Font family
+  # You can use any font that is installed on your machine
+  # in CSS-like syntax
+  fontFamily: "Monaco, Lucida Console, Ubuntu Mono, Monospace"
+  
+  # The size of the font
+  fontSize: 12
+  
+  # The height of lines
+  lineHeight: 1
+  
+  # The spacing between letters
+  letterSpacing: 0
+  
+  # Theme
+  theme:
+    background: "transparent"
+    foreground: "#afafaf"
+    cursor: "#c7c7c7"
+    black: "#232628"
+    red: "#fc4384"
+    green: "#b3e33b"
+    yellow: "#ffa727"
+    blue: "#75dff2"
+    magenta: "#ae89fe"
+    cyan: "#708387"
+    white: "#d5d5d0"
+    brightBlack: "#626566"
+    brightRed: "#ff7fac"
+    brightGreen: "#c8ed71"
+    brightYellow: "#ebdf86"
+    brightBlue: "#75dff2"
+    brightMagenta: "#ae89fe"
+    brightCyan: "#b1c6ca"
+    brightWhite: "#f9f9f4"
+  
+# Records, feel free to edit them
+records:
+  - delay: 205
+    content: "\r\e[0m\e[27m\e[24m\e[J\e[01;32m➜  \e[36mxemoe-exchange-app\e[00m \e[01;34mgit:(\e[31mmain\e[34m) \e[33m✗\e[00m \e[K\e[?1h\e=\e[?2004h"
+  - delay: 2433
+    content: "\e[4ms\e[24m\b\e[24msa"
+  - delay: 110
+    content: "\b\b\e[1m\e[31ms\e[1m\e[31ma\e[1m\e[31mi\e[0m\e[39m\b\b\b\e[0m\e[32ms\e[0m\e[32ma\e[0m\e[32mi\e[32ml\e[39m\e[90m artisan migrate:refresh --seed\e[39m\e[31D"
+  - delay: 169
+    content: "\e[39m "
+  - delay: 145
+    content: "\e[39m\e[4ma\e[24m"
+  - delay: 65
+    content: "\b\e[4ma\e[39m\e[4mr\e[24m"
+  - delay: 214
+    content: "\b\e[4mr\e[39m\e[4mt\e[24m"
+  - delay: 126
+    content: "\b\e[4mt\e[39m\e[4mi\e[24m"
+  - delay: 172
+    content: "\b\e[4mi\e[39m\e[4ms\e[24m"
+  - delay: 60
+    content: "\b\e[4ms\e[39m\e[4ma\e[24m"
+  - delay: 134
+    content: "\b\e[4ma\e[39m\e[4mn\e[24m"
+  - delay: 178
+    content: "\e[39m "
+  - delay: 183
+    content: "\e[39m\e[4mm\e[24m"
+  - delay: 151
+    content: "\b\e[4mm\e[39m\e[4mi\e[24m"
+  - delay: 119
+    content: "\b\e[4mi\e[39m\e[4mg\e[24m"
+  - delay: 178
+    content: "\b\e[4mg\e[39m\e[4mr\e[24m"
+  - delay: 86
+    content: "\b\e[4mr\e[39m\e[4ma\e[24m"
+  - delay: 160
+    content: "\b\e[4ma\e[39m\e[4mt\e[24m"
+  - delay: 144
+    content: "\b\e[4mt\e[39m\e[4me\e[24m"
+  - delay: 169
+    content: "\b\b\b\b\b\b\b\e[24mm\e[24mi\e[24mg\e[24mr\e[24ma\e[24mt\e[24me\e[39m:"
+  - delay: 204
+    content: "\e[39mf\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[13D\e[90mresh\e[39m\b\b\b\b"
+  - delay: 208
+    content: "\e[39mr"
+  - delay: 174
+    content: "\e[39me"
+  - delay: 297
+    content: "\e[39ms"
+  - delay: 181
+    content: "\e[39mh"
+  - delay: 220
+    content: "\e[?1l\e>\e[?2004l\r\r\n"
+  - delay: 756
+    content: "\r\n  Dropping all tables "
+  - delay: 349
+    content: "\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m 348ms\e[39m \e[32;1mDONE\e[39;22m\r\n\r\n  \e[37;44m INFO \e[39;49m Preparing database.  \r\n\r\n  Creating migration table "
+  - delay: 104
+    content: "\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m 103ms\e[39m \e[32;1mDONE\e[39;22m\r\n\r\n"
+  - delay: 18
+    content: "  \e[37;44m INFO \e[39;49m Running migrations.  \r\n\r\n  2014_10_12_000000_create_users_table "
+  - delay: 449
+    content: "\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m 448ms\e[39m \e[32;1mDONE\e[39;22m\r\n"
+  - delay: 28
+    content: '  2014_10_12_100000_create_password_reset_tokens_table '
+  - delay: 476
+    content: "\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m 475ms\e[39m \e[32;1mDONE\e[39;22m\r\n"
+  - delay: 28
+    content: '  2019_08_19_000000_create_failed_jobs_table '
+  - delay: 170
+    content: "\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m 170ms\e[39m \e[32;1mDONE\e[39;22m\r\n"
+  - delay: 13
+    content: '  2019_12_14_000001_create_personal_access_tokens_table '
+  - delay: 275
+    content: "\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m 274ms\e[39m \e[32;1mDONE\e[39;22m\r\n"
+  - delay: 14
+    content: '  2023_08_24_102800_create_roles_table '
+  - delay: 292
+    content: "\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m 291ms\e[39m \e[32;1mDONE\e[39;22m\r\n"
+  - delay: 13
+    content: '  2023_08_24_102813_create_role_users_table '
+  - delay: 899
+    content: "\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m 898ms\e[39m \e[32;1mDONE\e[39;22m\r\n"
+  - delay: 10
+    content: '  2023_08_24_125953_create_crypto_currencies_table '
+  - delay: 297
+    content: "\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m 296ms\e[39m \e[32;1mDONE\e[39;22m\r\n"
+  - delay: 10
+    content: '  2023_08_24_130005_create_wallets_table '
+  - delay: 900
+    content: "\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m 900ms\e[39m \e[32;1mDONE\e[39;22m\r\n"
+  - delay: 13
+    content: '  2023_08_25_115815_create_trading_pairs_table '
+  - delay: 919
+    content: "\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m 918ms\e[39m \e[32;1mDONE\e[39;22m\r\n"
+  - delay: 10
+    content: '  2023_08_25_120621_create_fiat_currencies_table '
+  - delay: 307
+    content: "\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m.\e[39m\e[90m 306ms\e[39m \e[32;1mDONE\e[39;22m\r\n"
+  - delay: 13
+    content: "\r\n"
+  - delay: 31
+    content: "\e[1m\e[7m%\e[27m\e[1m\e[0m                                                                                                                                                                        \r \r"
+  - delay: 15
+    content: "\r\e[0m\e[27m\e[24m\e[J\e[01;32m➜  \e[36mxemoe-exchange-app\e[00m \e[01;34mgit:(\e[31mmain\e[34m) \e[33m✗\e[00m \e[K\e[?1h\e=\e[?2004h"
+  - delay: 1596
+    content: "\e[4ms\e[24m\b\e[4ms\e[24m\e[90mail artisan migrate:fresh\e[39m\e[25D"
+  - delay: 121
+    content: "\b\e[24m\e[1m\e[31ms\e[1m\e[31ma\e[0m\e[39m"
+  - delay: 137
+    content: "\b\b\e[1m\e[31ms\e[1m\e[31ma\e[1m\e[31mi\e[0m\e[39m"
+  - delay: 100
+    content: "\b\b\b\e[0m\e[32ms\e[0m\e[32ma\e[0m\e[32mi\e[32ml\e[39m"
+  - delay: 233
+    content: "\e[39m "
+  - delay: 172
+    content: "\e[39m\e[4ma\e[24m"
+  - delay: 94
+    content: "\b\e[4ma\e[39m\e[4mr\e[24m"
+  - delay: 185
+    content: "\b\e[4mr\e[39m\e[4mt\e[24m"
+  - delay: 127
+    content: "\b\e[4mt\e[39m\e[4mi\e[24m"
+  - delay: 771
+    content: "\b\e[4mi\e[39m\e[4ms\e[24m"
+  - delay: 58
+    content: "\b\e[4ms\e[39m\e[4ma\e[24m"
+  - delay: 336
+    content: "\b\e[4ma\e[39m\e[4mn\e[24m"
+  - delay: 234
+    content: "\e[39m "
+  - delay: 234
+    content: "\e[39m\e[4md\e[24m\e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[39m \e[12D\e[90mb:seed\e[39m\b\b\b\b\b\b"
+  - delay: 268
+    content: "\b\e[24md\e[39mb"
+  - delay: 246
+    content: "\e[39m:"
+  - delay: 201
+    content: "\e[39ms"
+  - delay: 34
+    content: "\e[39me"
+  - delay: 212
+    content: "\e[39me"
+  - delay: 151
+    content: "\e[39md"
+  - delay: 164
+    content: "\e[?1l\e>\e[?2004l\r\r\n"
+  - delay: 761
+    content: "\r\n  \e[37;44m INFO \e[39;49m Seeding database.  \r\n\r\n  Database\\Seeders\\CurrencySeeder \e[90m..........................................................................................................\e[39m \e[33;1mRUNNING\e[39;22m  \r\n\r\n"
+  - delay: 20
+    content: "\e[32m  Creating default CryptoCurrency...\e[39m\r\n"
+  - delay: 25
+    content: "\e[33m  Name: Bitcoin Symbol: BTC\e[39m\r\n"
+  - delay: 19
+    content: "\e[33m  Name: Ethereum Symbol: ETH\e[39m\r\n"
+  - delay: 19
+    content: "\e[33m  Name: Ripple Symbol: XRP\e[39m\r\n"
+  - delay: 13
+    content: "\e[33m  Name: Doge coin Symbol: DOGE\e[39m\r\n"
+  - delay: 21
+    content: "\e[33m  Name: Binance - BNB Symbol: BNB\e[39m\r\n"
+  - delay: 16
+    content: "\e[33m  Name: Binance - BUSD Symbol: BUSD\e[39m\r\n\r\n\e[32m  Creating default FiatCurrency...\e[39m\r\n"
+  - delay: 16
+    content: "\e[33m  Name: US Dollar Symbol: USD\e[39m\r\n"
+  - delay: 16
+    content: "\e[33m  Name: Euro Symbol: EUR\e[39m\r\n"
+  - delay: 20
+    content: "\e[33m  Name: Thai Baht Symbol: THB\e[39m\r\n\r\n\e[32m  Creating default TradingPairs...\e[39m\r\n"
+  - delay: 21
+    content: "\e[33m  C2C Pairs: BTC/ETH\e[39m\r\n"
+  - delay: 17
+    content: "\e[33m  C2C Pairs: BTC/BUSD\e[39m\r\n"
+  - delay: 19
+    content: "\e[33m  C2C Pairs: ETH/BTC\e[39m\r\n"
+  - delay: 19
+    content: "\e[33m  C2C Pairs: ETH/BUSD\e[39m\r\n"
+  - delay: 18
+    content: "\e[33m  C2C Pairs: BUSD/BTC\e[39m\r\n"
+  - delay: 17
+    content: "\e[33m  C2C Pairs: BUSD/ETH\e[39m\r\n"
+  - delay: 20
+    content: "\e[33m  F2C Pairs: USD/BTC\e[39m\r\n"
+  - delay: 17
+    content: "\e[33m  F2C Pairs: USD/ETH\e[39m\r\n"
+  - delay: 18
+    content: "\e[33m  F2C Pairs: USD/BUSD\e[39m\r\n"
+  - delay: 15
+    content: "\e[33m  F2C Pairs: EUR/BTC\e[39m\r\n"
+  - delay: 18
+    content: "\e[33m  F2C Pairs: EUR/ETH\e[39m\r\n"
+  - delay: 17
+    content: "\e[33m  F2C Pairs: EUR/BUSD\e[39m\r\n"
+  - delay: 17
+    content: "\e[33m  F2C Pairs: THB/BTC\e[39m\r\n"
+  - delay: 17
+    content: "\e[33m  F2C Pairs: THB/ETH\e[39m\r\n"
+  - delay: 17
+    content: "\e[33m  F2C Pairs: THB/BUSD\e[39m\r\n"
+  - delay: 21
+    content: "\e[33m  C2F Pairs: BTC/USD\e[39m\r\n"
+  - delay: 16
+    content: "\e[33m  C2F Pairs: BTC/EUR\e[39m\r\n"
+  - delay: 18
+    content: "\e[33m  C2F Pairs: BTC/THB\e[39m\r\n"
+  - delay: 18
+    content: "\e[33m  C2F Pairs: ETH/USD\e[39m\r\n"
+  - delay: 18
+    content: "\e[33m  C2F Pairs: ETH/EUR\e[39m\r\n"
+  - delay: 19
+    content: "\e[33m  C2F Pairs: ETH/THB\e[39m\r\n"
+  - delay: 16
+    content: "\e[33m  C2F Pairs: BUSD/USD\e[39m\r\n"
+  - delay: 19
+    content: "\e[33m  C2F Pairs: BUSD/EUR\e[39m\r\n"
+  - delay: 42
+    content: "\e[33m  C2F Pairs: BUSD/THB\e[39m\r\n\r\n  Database\\Seeders\\CurrencySeeder \e[90m...................................................................................................\e[39m \e[90m639.71 ms\e[39m \e[32;1mDONE\e[39;22m  \r\n\r\n  Database\\Seeders\\UserSeeder \e[90m..............................................................................................................\e[39m \e[33;1mRUNNING\e[39;22m  \r\n\r\n\e[32m  Creating default user role...\e[39m\r\n\e[32m  Name: Admin\e[39m\r\n\e[32m  Name: Regular\e[39m\r\n\r\n"
+  - delay: 181
+    content: "\e[32m  Creating default admin user...\e[39m\r\n\e[32m  Name: John Doe\e[39m\r\n\e[32m  Email: john_doe@example.com\e[39m\r\n\e[33m  Password: &HXd*qK[;_#6wYXT\e[39m\r\n\r\n\e[32m  Creating default wallet for user...John Doe\e[39m\r\n"
+  - delay: 45
+    content: "\e[33m  Symbol: BTC Address: 519b11352e734d8ae676c6f13873624f75dbec43b5111dd47e2f6044a59b48b9\e[39m\r\n"
+  - delay: 32
+    content: "\e[33m  Symbol: ETH Address: 4b0ad956f21ba60c2c4ec299b064c2517d08cc65d613999c34261d557293a8a0\e[39m\r\n"
+  - delay: 20
+    content: "\e[33m  Symbol: XRP Address: 2ffd58cf67a96fe2a3d2e2353254504dbb5a9030e2829137de103b2d5c5510d9\e[39m\r\n\r\n"
+  - delay: 89
+    content: "\e[32m  Creating default regular user...\e[39m\r\n\e[32m  Name: Ardella Schmidt\e[39m\r\n\e[32m  Email: zwilderman@lemke.org\e[39m\r\n\e[33m  Password: >\\X5|/*t>{D)CRjCAD\"N\e[39m\r\n\r\n\e[32m  Creating default wallet for user...Ardella Schmidt\e[39m\r\n"
+  - delay: 17
+    content: "\e[33m  Symbol: BTC Address: 53a92cb696edc59f935eb6a0c26cbe02d7b628c5d4c64618b8da0063689465d0\e[39m\r\n"
+  - delay: 18
+    content: "\e[33m  Symbol: ETH Address: 5805e9556916129b0aefddacb0ecf834119c0956f3a7eddab290754c50778ad9\e[39m\r\n"
+  - delay: 20
+    content: "\e[33m  Symbol: XRP Address: 3c5258c33ce5fd7f067b3b489284ad29030d4c06078997169462ae9c9e42ebb1\e[39m\r\n\r\n  Database\\Seeders\\UserSeeder \e[90m.......................................................................................................\e[39m \e[90m424.05 ms\e[39m \e[32;1mDONE\e[39;22m  \r\n\r\n"
+  - delay: 37
+    content: "\e[1m\e[7m%\e[27m\e[1m\e[0m                                                                                                                                                                        \r \r"
